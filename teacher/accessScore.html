@@ -1,0 +1,76 @@
+<style type="text/css">
+  #select_panel
+  {
+    margin:40px auto;
+    width:85%;
+  }
+  .select_tool
+  {
+    background-color:#107Cea !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .select_list
+  {
+	  overflow: auto;
+    border:1px solid #999;
+	  border-top:none;
+    padding-left:15px;
+    padding-right:15px;
+    box-shadow: 1px 1px  2px gray;
+    background:white !important;
+    margin-bottom:8px;
+  }
+  ul#courseHeader
+  {
+	  overflow:auto;
+	  padding-right:10px;
+	  font-size:18px;
+	  font-weight:bold;
+	  padding-top:14px;
+	  list-style:none;
+	  margin-bottom:10px;
+  }
+  ul#courseContent
+  {
+	  overflow: auto;
+  }
+  ul#courseHeader li,ul#courseContent li
+  {
+	  float:left;
+	  width:300px;
+	  text-align: center;
+  }
+  .cur_pro
+  {
+	  width:210px !important;
+  }
+</style>
+
+<div style="width:100%;min-height:100%;background:#efefef">
+  <div  id="select_panel">
+    <md-toolbar class="md-toolbar-tools toolhead select_tool">
+          <h2 class="md-toolbar-tools">
+            <span>老师您好，现已列出您所交的所有课程，请您点击进入进行成绩评分</span>
+          </h2>
+          <span flex></span>
+    </md-toolbar>
+    <md-list  ng-cloak class="select_list">
+      <ul id="courseHeader">
+        <li>课程名</li>
+        <li class="cur_pro">课程性质</li>
+        <li class="cur_pro">授课班级</li>
+      </ul>
+  	  <md-list-item ng-repeat="sub in courses">
+        <ul id="courseContent">
+          <li>{{sub.name}}</li>
+          <li class="cur_pro">{{sub.type}}</li>
+          <li class="cur_pro">{{sub.class}}</li>
+        </ul>
+        <md-button class="md-raised" ng-click="showRate($event,$index)">进入评分</md-button>
+        <md-button class="md-raised" ng-disabled="sub.isSubmitted">查看成绩情况</md-button>
+        <md-divider></md-divider>
+	   </md-list-item>
+    </md-list>
+  </div>
+</div>

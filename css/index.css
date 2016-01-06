@@ -1,0 +1,93 @@
+body,*
+{
+	margin:0px;
+	padding:0px;
+	font-family: '宋体';
+}
+ul,ol{
+	list-style: none;
+}
+.lhs_stu_head
+{
+	background-color:#009688 !important;
+}
+.lhs_logo img
+{
+	width:150px;
+	height:150px;
+}
+.lhs_logo > div
+{
+	color:white;
+	height:40px;
+	line-height:40px;
+	font-size:24px;
+	font-weight:bold;
+	margin-top:-12px;
+}
+.lhs_logo
+{
+	display:inline-block;
+	text-align:center;
+	text-decoration: none;
+}
+
+.lhs_stu_navbar
+{
+	background-color:#106CC8;
+	color:white;
+}
+
+.lhs_stu_content
+{
+	height:300px;
+	background-color:#ededef;
+}
+
+.lhs_menu
+{
+	margin-top:40px;
+	width:100%;
+}
+.lhs_menu li
+{
+	border-bottom: 1px solid rgba(200,200,200,0.3);
+}
+.lhs_menu li > a
+{
+	display:block;
+	height:36px;
+	line-height:36px;
+	font-size:19px;
+	color:white;
+	text-decoration: none;
+	padding-left:40px;
+	transition:padding-left 0.3s linear;
+}
+.lhs_menu li > a:hover{
+	padding-left:55px;
+}
+.lhs_menu .active
+{
+	background:rgba(200,200,200,0.3);
+}
+
+
+md-sidenav, 
+md-sidenav.md-locked-open, 
+md-sidenav.md-closed.md-locked-open-add-active {
+    min-width: 200px !important;
+    max-width: 220px !important;
+} 
+
+
+.fab_dial .md-fab:hover, .fab_dial .md-fab.md-focused {
+  background-color:#ccc !important; }
+  
+ .fab_dial .fab_main:hover,.fab_dial .fab_main.md-focused{
+	 background-color: rgba(70,150,210,0.5) !important;
+ }
+ 
+ 
+ 
+ 

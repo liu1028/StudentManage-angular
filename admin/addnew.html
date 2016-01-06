@@ -1,0 +1,34 @@
+<md-dialog aria-label="selectRate" role="dialog" tabindex="-1" aria-describedby="dialog_18" class="md-content-overflow md-transition-in" style="">
+  <form class="ng-pristine ng-invalid ng-invalid-required">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>添加新闻</h2>
+      <span class="flex"></span>
+      <button class="md-icon-button md-button md-ink-ripple" ng-transclude="" ng-click="cancel($event)">
+        <md-icon md-svg-src="front_frame/angular-material/img/icons/ic_close_24px.svg" aria-label="Close dialog" class="ng-scope ng-isolate-scope" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" style="pointer-events: none; display: block;"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></md-icon>
+      </button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px;min-width:500px; " id="dialog_18">
+    <div class="md-dialog-content" style="font-weight:bold;">
+        <md-input-container class="md-block">
+          <label for="input_15">标题：</label>
+          <input ng-model="title" required="" class="ng-pristine ng-untouched md-input ng-invalid ng-invalid-required" id="input_15" aria-required="true" aria-invalid="true">
+        </md-input-container> 
+
+		<md-datepicker ng-model="myDate" md-placeholder="请输入时间" required="" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-valid-required" tabindex="-1" aria-required="false" aria-invalid="false"><button class="md-datepicker-button md-icon-button md-button md-ink-ripple" ng-transclude="" type="button" tabindex="-1" aria-hidden="true" ng-click="ctrl.openCalendarPane($event)"><md-icon class="md-datepicker-calendar-icon ng-scope ng-isolate-scope" md-svg-icon="md-calendar" aria-label="md-calendar" role="img"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" style="pointer-events: none; display: block;"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"></path></svg></md-icon></button><div class="md-datepicker-input-container" ng-class="{'md-datepicker-focused': ctrl.isFocused}"><input class="md-datepicker-input" aria-haspopup="true" ng-focus="ctrl.setFocused(true)" ng-blur="ctrl.setFocused(false)" placeholder="请输入时间" size="12"><button class="md-datepicker-triangle-button md-icon-button md-button" ng-transclude="" type="button" md-no-ink="" ng-click="ctrl.openCalendarPane($event)" aria-label="Open calendar"><div class="md-datepicker-expand-triangle ng-scope"></div></button></div><div class="md-datepicker-calendar-pane md-whiteframe-z1" id="md-date-pane16"><div class="md-datepicker-input-mask"><div class="md-datepicker-input-mask-opaque"></div></div><div class="md-datepicker-calendar"><!-- ngIf: ctrl.isCalendarOpen --></div></div></md-datepicker>
+
+        <md-input-container class="md-block" style="height: auto;">
+          <label for="input_17">内容：</label>
+          <textarea ng-model="content" required="" class="ng-pristine ng-untouched md-input ng-invalid ng-invalid-required" id="input_17" rows="1" aria-multiline="true" aria-required="true" aria-invalid="true" style="height: 30px;"></textarea>
+        </md-input-container> 
+    </div>
+  </md-dialog-content>
+  <div class="md-actions layout-row">
+    <span class="flex"></span>
+    <button class="md-raised md-accent md-button md-ink-ripple" ng-transclude="" ng-click="answer($event)" type="submit" style="margin-right:20px;"><span class="ng-scope">
+      确定
+    </span></button>
+  </div>
+  </form>
+</md-dialog>

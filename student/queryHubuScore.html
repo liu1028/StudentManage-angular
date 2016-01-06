@@ -1,0 +1,116 @@
+﻿<style type="text/css">
+	#so_table
+	{
+		border:1px solid rgb(79,79,217);
+		margin:0px auto;
+		margin-bottom:20px;
+	}
+	#so_table th
+	{
+		background:rgb(79,79,217);
+		color:white;
+		font-weight:bold;
+		font-size:16px;
+		height:50px;
+		line-height:50px;
+		text-align: center;
+	}
+	#so_table td
+	{
+		height:35px;
+		text-align:center;
+	}
+	#so_table tr:nth-child(2n)
+	{
+		background:rgb(206,179,219);
+	}
+	#so_table tr:nth-child(2n+1)
+	{
+		background:#ddd;
+	}
+
+
+	.login_s
+	{
+		margin:60px auto;
+		padding:18px 30px 20px 10px;
+		border: 1px solid blue;
+		box-shadow: 0px 0px 20px #106CC8;
+		border-radius:8px;
+	}
+	#login_td
+	{
+		background:rgb(240,240,240);
+	}
+	#login_td th
+	{
+		font-weight: bold;
+		font-size: 25px;
+		padding-bottom: 25px;		
+	}
+	#login_td td
+	{
+		height:40px;
+	}
+	#login_td input
+	{
+		width:180px;
+		height:25px;
+		border:2px solid #ddd;
+	}
+	#login_td .r
+	{
+		width:90px;
+		height:30px;
+	}
+	#login_td .l
+	{
+		width:180px;
+	}
+	
+	.score_list
+	{
+		margin:20px auto;
+	}
+</style>
+
+
+<div class="login_s" ng-show="IsLogin">
+	<table cellpading="8" id="login_td">
+		<tr>
+			<th colspan="2" align="center">欢迎登录湖大教务处</th>
+		</tr>
+		<tr>
+			<td align="right" class="r">用户名：</td>
+			<td align="left" class="l"><input type="text" ng-model="username" /></td>
+		</tr>
+		<tr>
+			<td align="right" class="r">密码：</td>
+			<td align="left" class="l"><input type="password" ng-model="password" /></td>
+		</tr>
+		<tr>
+			<td align="right" class="r">验证码：</td>
+			<td align="left"><input type="text" ng-model="validate"  style="width:60px;" />
+				<img src="http://121.42.153.166:8001/Service1.asmx/GetImage" id="validation" alt="图片无用" style="vertical-align:middle;"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center" style="padding-top:10px;">
+				<md-button class="md-raised md-primary" ng-click="login($event)">登录</md-button>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<md-button class="md-raised md-primary" ng-click="getScore()" ng-show="IsScore" style="width:200px !important;">查成绩</md-button>
+<md-button class="md-raised md-primary" ng-click="getCur()" ng-show="IsScore" style="width:200px !important;">查课程表</md-button>
+
+<div class="score_list">
+	
+</div>
+<script>
+	var src=$('#validation').attr('src');
+	src+='?cod='+Math.random();
+	$('#validation').attr('src',src);
+	
+</script>

@@ -1,0 +1,101 @@
+<md-content ng-view="" style="background: rgb(239, 239, 239);" class="ng-scope layout-column flex-grow"><style type="text/css" class="ng-scope">
+  .newshead
+  {
+    background:#d9edf7;
+    color:#31708f;
+    font:normal bold 22px "微软雅黑" !important;
+    height:65px;
+    position: relative;
+  }
+</style>
+
+<div style="width:100%;min-height:100%;background:#efefef;" class="ng-scope">
+ <md-content style="margin:30px 50px 40px 40px;"><div class="md-subheader-wrapper ng-scope md-sticky-clone" sticky-state="next" style="margin-left: 10px;"><div class="newshead md-subheader layout-row">  <div class="md-subheader-inner">    <span class="md-subheader-content">
+        <span class="ng-scope flex">新闻列表</span>
+        <button class="md-fab md-mini md-button ng-scope md-ink-ripple" ng-transclude="" aria-label="addnew" ng-click="addnews()" style="position:absolute;right:10px;top:-9px;">
+            
+            <md-icon md-svg-src="front_frame/angular-material/img/icons/cake.svg" class="ng-scope ng-isolate-scope" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" style="pointer-events: none; display: block;"><g id="cake"><path d="M12 6c1.11 0 2-.9 2-2 0-.38-.1-.73-.29-1.03L12 0l-1.71 2.97c-.19.3-.29.65-.29 1.03 0 1.1.9 2 2 2zm4.6 9.99l-1.07-1.07-1.08 1.07c-1.3 1.3-3.58 1.31-4.89 0l-1.07-1.07-1.09 1.07C6.75 16.64 5.88 17 4.96 17c-.73 0-1.4-.23-1.96-.61V21c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-4.61c-.56.38-1.23.61-1.96.61-.92 0-1.79-.36-2.44-1.01zM18 9h-5V7h-2v2H6c-1.66 0-3 1.34-3 3v1.54c0 1.08.88 1.96 1.96 1.96.52 0 1.02-.2 1.38-.57l2.14-2.13 2.13 2.13c.74.74 2.03.74 2.77 0l2.14-2.13 2.13 2.13c.37.37.86.57 1.38.57 1.08 0 1.96-.88 1.96-1.96V12C21 10.34 19.66 9 18 9z"></path></g></svg></md-icon>
+        </button>
+      </span>  </div></div></div>
+    <md-list style="padding-left:10px;padding-right:10px;" role="list">
+      <div class="newshead md-subheader layout-row" sticky-state="next">  <div class="md-subheader-inner">    <span class="md-subheader-content">
+        <span class="ng-scope flex">新闻列表</span>
+        <button class="md-fab md-mini md-button ng-scope md-ink-ripple" ng-transclude="" aria-label="addnew" ng-click="addnews()" style="position:absolute;right:10px;top:-9px;">
+            
+            <md-icon md-svg-src="front_frame/angular-material/img/icons/cake.svg" class="ng-scope ng-isolate-scope" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" style="pointer-events: none; display: block;"><g id="cake"><path d="M12 6c1.11 0 2-.9 2-2 0-.38-.1-.73-.29-1.03L12 0l-1.71 2.97c-.19.3-.29.65-.29 1.03 0 1.1.9 2 2 2zm4.6 9.99l-1.07-1.07-1.08 1.07c-1.3 1.3-3.58 1.31-4.89 0l-1.07-1.07-1.09 1.07C6.75 16.64 5.88 17 4.96 17c-.73 0-1.4-.23-1.96-.61V21c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-4.61c-.56.38-1.23.61-1.96.61-.92 0-1.79-.36-2.44-1.01zM18 9h-5V7h-2v2H6c-1.66 0-3 1.34-3 3v1.54c0 1.08.88 1.96 1.96 1.96.52 0 1.02-.2 1.38-.57l2.14-2.13 2.13 2.13c.74.74 2.03.74 2.77 0l2.14-2.13 2.13 2.13c.37.37.86.57 1.38.57 1.08 0 1.96-.88 1.96-1.96V12C21 10.34 19.66 9 18 9z"></path></g></svg></md-icon>
+        </button>
+      </span>  </div></div>
+      <!-- ngRepeat: item in news --><md-list-item class="md-3-line ng-scope" ng-repeat="item in news" style="padding-left:20px;" role="listitem">
+        <img ng-src="front_frame/angular-material/img/list/60.jpeg?0" class="md-avatar" alt="一拳超人的简介" src="front_frame/angular-material/img/list/60.jpeg?0">
+        <div class="md-list-item-text layout-row" style="padding-top:10px;padding-bottom:10px;">
+          <div class="layout-column flex-85">
+            <h3 class="ng-binding">一拳超人的简介</h3>
+            <h4 style="font-style:italic;" class="ng-binding">2014-5-9</h4>
+            <p class="ng-binding"> 《一拳超人[1]  》（日语：ワンパンマン），又有译作《一击男》，是日本网络漫画家ONE的幽默格斗漫画，该作品以一个漫原稿软件ComicStudio PC 制作，于2009年7月3日在ONE的个人网站开始连载,虽然画功粗糙，但却于日本网络大热，根据日本NHK2012年9月2日播出的“网络漫画革命”调查，		《一拳超人》于该年观看总数超过1000万次，平均每天有高达20,000点击。现在持续于ONE的网站连载中</p>
+          </div>
+          <div class="layout-padding layout-column">
+            <button class="md-raised md-primary md-button md-ink-ripple" ng-transclude="" ng-click="editnews($index,$event)"><span class="ng-scope">编辑</span></button>
+            <button class="md-warn md-raised md-button md-ink-ripple" ng-transclude="" ng-click="deletenews($index,$event)"><span class="ng-scope">删除</span></button>
+          </div>
+        </div>
+        <md-divider style="border-top:1px solid #31708f;"></md-divider>
+      </md-list-item><!-- end ngRepeat: item in news --><md-list-item class="md-3-line ng-scope" ng-repeat="item in news" style="padding-left:20px;" role="listitem">
+        <img ng-src="front_frame/angular-material/img/list/60.jpeg?1" class="md-avatar" alt="Brunch this weekend?" src="front_frame/angular-material/img/list/60.jpeg?1">
+        <div class="md-list-item-text layout-row" style="padding-top:10px;padding-bottom:10px;">
+          <div class="layout-column flex-85">
+            <h3 class="ng-binding">Brunch this weekend?</h3>
+            <h4 style="font-style:italic;" class="ng-binding">2014-5-9</h4>
+            <p class="ng-binding">《一拳超人[1]  》（日语：ワンパンマン），又有译作《一击男》，是日本网络漫画家ONE的幽默格斗漫画，该作品以一个漫原稿软件ComicStudio PC 制作，于2009年7月3日在ONE的个人网站开始连载,虽然画功粗糙，但却于日本网络大热，根据日本NHK2012年9月2日播出的“网络漫画革命”调查</p>
+          </div>
+          <div class="layout-padding layout-column">
+            <button class="md-raised md-primary md-button md-ink-ripple" ng-transclude="" ng-click="editnews($index,$event)"><span class="ng-scope">编辑</span></button>
+            <button class="md-warn md-raised md-button md-ink-ripple" ng-transclude="" ng-click="deletenews($index,$event)"><span class="ng-scope">删除</span></button>
+          </div>
+        </div>
+        <md-divider style="border-top:1px solid #31708f;"></md-divider>
+      </md-list-item><!-- end ngRepeat: item in news --><md-list-item class="md-3-line ng-scope" ng-repeat="item in news" style="padding-left:20px;" role="listitem">
+        <img ng-src="front_frame/angular-material/img/list/60.jpeg?2" class="md-avatar" alt="Brunch this weekend?" src="front_frame/angular-material/img/list/60.jpeg?2">
+        <div class="md-list-item-text layout-row" style="padding-top:10px;padding-bottom:10px;">
+          <div class="layout-column flex-85">
+            <h3 class="ng-binding">Brunch this weekend?</h3>
+            <h4 style="font-style:italic;" class="ng-binding">2014-5-9</h4>
+            <p class="ng-binding">《一拳超人[1]  》（日语：ワンパンマン），又有译作《一击男》，是日本网络漫画家ONE的幽默格斗漫画，该作品以一个漫原稿软件ComicStudio PC 制作，于2009年7月3日在ONE的个人网站开始连载,虽然画功粗糙，但却于日本网络大热，根据日本NHK2012年9月2日播出的“网络漫画革命”调查，		《一拳超人》于该年观看总数超过1000万次，平均每天有高达20,000点击。现在持续于ONE的网站连载中</p>
+          </div>
+          <div class="layout-padding layout-column">
+            <button class="md-raised md-primary md-button md-ink-ripple" ng-transclude="" ng-click="editnews($index,$event)"><span class="ng-scope">编辑</span></button>
+            <button class="md-warn md-raised md-button md-ink-ripple" ng-transclude="" ng-click="deletenews($index,$event)"><span class="ng-scope">删除</span></button>
+          </div>
+        </div>
+        <md-divider style="border-top:1px solid #31708f;"></md-divider>
+      </md-list-item><!-- end ngRepeat: item in news --><md-list-item class="md-3-line ng-scope" ng-repeat="item in news" style="padding-left:20px;" role="listitem">
+        <img ng-src="front_frame/angular-material/img/list/60.jpeg?3" class="md-avatar" alt="Brunch this weekend?" src="front_frame/angular-material/img/list/60.jpeg?3">
+        <div class="md-list-item-text layout-row" style="padding-top:10px;padding-bottom:10px;">
+          <div class="layout-column flex-85">
+            <h3 class="ng-binding">Brunch this weekend?</h3>
+            <h4 style="font-style:italic;" class="ng-binding">2014-5-9</h4>
+            <p class="ng-binding">《一拳超人[1]  》（日语：ワンパンマン），又有译作《一击男》，是日本网络漫画家ONE的幽默格斗漫画，该作品以一个漫原稿软件ComicStudio PC 制作，于2009年7月3日在ONE的个人网站开始连载,虽然画功粗糙，但却于日本网络大热，根据日本NHK2012年9月2日播出的“网络漫画革命”调查，		《一拳超人》于该年观看总数超过1000万次，平均每天有高达20,000点击。现在持续于ONE的网站连载中</p>
+          </div>
+          <div class="layout-padding layout-column">
+            <button class="md-raised md-primary md-button md-ink-ripple" ng-transclude="" ng-click="editnews($index,$event)"><span class="ng-scope">编辑</span></button>
+            <button class="md-warn md-raised md-button md-ink-ripple" ng-transclude="" ng-click="deletenews($index,$event)"><span class="ng-scope">删除</span></button>
+          </div>
+        </div>
+        <md-divider style="border-top:1px solid #31708f;"></md-divider>
+      </md-list-item><!-- end ngRepeat: item in news --><md-list-item class="md-3-line ng-scope" ng-repeat="item in news" style="padding-left:20px;" role="listitem">
+        <img ng-src="front_frame/angular-material/img/list/60.jpeg?4" class="md-avatar" alt="Brunch this weekend?" src="front_frame/angular-material/img/list/60.jpeg?4">
+        <div class="md-list-item-text layout-row" style="padding-top:10px;padding-bottom:10px;">
+          <div class="layout-column flex-85">
+            <h3 class="ng-binding">Brunch this weekend?</h3>
+            <h4 style="font-style:italic;" class="ng-binding">Min Li Chan</h4>
+            <p class="ng-binding">《一拳超人[1]  》（日语：ワンパンマン），又有译作《一击男》，是日本网络漫画家ONE的幽默格斗漫画，该作品以一</p>
+          </div>
+          <div class="layout-padding layout-column">
+            <button class="md-raised md-primary md-button md-ink-ripple" ng-transclude="" ng-click="editnews($index,$event)"><span class="ng-scope">编辑</span></button>
+            <button class="md-warn md-raised md-button md-ink-ripple" ng-transclude="" ng-click="deletenews($index,$event)"><span class="ng-scope">删除</span></button>
+          </div>
+        </div>
+        <md-divider style="border-top:1px solid #31708f;"></md-divider>
+      </md-list-item><!-- end ngRepeat: item in news -->
+    </md-list>
+ </md-content>
+</div></md-content>

@@ -1,0 +1,78 @@
+<style type="text/css">
+  #select_panel
+  {
+    margin-top:50px;
+    margin-bottom: 40px;
+    width:70%;
+  }
+  .select_tool
+  {
+    background-color:rgb(79,79,217) !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .select_list
+  {
+    border:1px solid #999;
+    padding-left:15px;
+    padding-right:15px;
+    box-shadow: 1px 1px  2px gray;
+    background:white !important;
+    margin-bottom:8px;
+  }
+  .select_list .left
+  {
+    float:left;
+  }
+  .select_list .right
+  {
+    float:right;
+  }
+  .select_list span
+  {
+    display: inline-block;
+    text-align: center;
+  }
+  .select_list div > div
+  {
+    text-align: center;
+  }
+  .select_list p
+  {
+    background:#d9edf7;
+    padding:8px;
+    color:#31708f;
+  }
+</style>
+<div style="width:100%;min-height:100%;background:#efefef" layout="row">
+  <div flex></div>
+  <div  id="select_panel">
+    <md-toolbar class="md-toolbar-tools toolhead select_tool">
+          <h2 class="md-toolbar-tools">
+            <span>教师选择公选课模块（请在有意愿的课程后打钩）</span>
+          </h2>
+          <span flex></span>
+          <md-button class="md-raised md-accent" ng-hide="IsSubmitted" ng-click="submitSub($event)">提交</md-button>
+    </md-toolbar>
+    <md-list  ng-cloak class="select_list">
+      <div style="padding-left:17px;padding-right:10px;font-size:18px;font-weight:bold;padding-top:14px;">
+        <div style="width:260px;" class="left">课程名</div>
+        <div style="width:120px;" class="left">年份</div>
+        <div style="width:140px;" class="left">类型</div>
+        <div style="float:right" class="right">确认</div>
+        <div style="clear:both"></div>
+      </div>
+      <md-list-item ng-repeat="t in teachSubs">
+        <p>
+          <span style="width:250px;">{{t.name }}</span>
+          <span style="width:120px">{{t.year}}</span>
+          <span style="width:140px;">{{t.type}}</span>
+        </p>
+        <md-checkbox class="md-secondary" ng-model="t.wanted" ng-disabled="IsSubmitted"></md-checkbox>
+        <md-divider ></md-divider>
+      </md-list-item>
+    </md-list>
+    <md-button class="md-raised md-accent" style="float:right;" ng-click="submitSub($event)" ng-hide="IsSubmitted">提交</md-button>
+  </div>
+  <div flex></div>
+</div>

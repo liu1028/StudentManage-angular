@@ -1,0 +1,52 @@
+<style type="text/css">
+
+	table.selected_sub th
+	{
+		background:#107Cea;
+		height:45px;
+		font-size:18px;
+		font-weight:bold;
+		color:white;
+	}
+	table.selected_sub th
+	{
+		background:#31708f;
+	}
+	table.selected_sub
+	{
+		margin:30px auto;
+	}
+	table.selected_sub td
+	{
+		background:	#d9edf7;
+		text-align: center;
+		height:35px;
+	}
+</style>
+
+<div style="width:100%;min-height:100%;background:#efefef">
+	<table class="selected_sub" cellpadding="3" align="center">
+		<tr>
+			<th width="60">编号</th>
+			<th width="160">课程名</th>
+			<th width="100">授课教师</th>
+			<th width="150">学院</th>
+			<th width="100">班级</th>
+			<th width="120">平时成绩</th>
+			<th width="120">考试成绩</th>
+			<th width="120">最终成绩</th>									
+		</tr>
+		<tr ng-repeat="s in subs">
+			<td>{{$index+1}}</td>
+			<td>{{s.name}}</td>
+			<td>{{s.teacher}}</td>
+			<td>{{s.department}}</td>
+			<td>{{s.class}}</td>
+			<td>{{s.regularGrade}}</td>
+			<td>{{s.finalExamGrade}}</td>
+			<td>{{s.finalGrade}}</td>
+		</tr>
+	</table>
+</div>
+
+ <!--[{id, year, name, type, department, major, teacher, class, regularGrade, finalExamGrade, finalGrade}, ...]}-->

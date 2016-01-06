@@ -1,0 +1,56 @@
+<style type="text/css">
+	ul.lhs-menu
+	{
+		overflow:auto;
+		list-style: none;
+		margin-bottom: 20px;
+	}
+	.lhs-ml
+	{
+		height:50px;
+		padding-top:22px;
+		display: inline-block;
+	}
+	.lhs-menu-left
+	{
+		background:url('image/menu-li-left.png') no-repeat;
+		width:20px;
+	}
+	.lhs-menu-middle
+	{
+		background:url('image/menu-li-center.png') repeat-x;	
+		padding-left:20px;
+		padding-right:20px;	
+		color:white;
+		font-weight: bold;
+	}
+	.lhs-menu-right
+	{
+		background:url('image/menu-li-right.png') no-repeat;
+		width:20px;
+	}
+	.lhs-menu li
+	{
+		overflow:auto;
+		float:left;
+		margin-left:20px;
+	}
+	.lhs-menu li > div
+	{
+		float:left;
+	}
+</style>
+
+<ul class="lhs-menu">
+	<li>
+		<div class="lhs-menu-left lhs-ml"></div>
+		<div class="lhs-menu-middle lhs-ml">温馨提示，请现在查分数模块中成功登录，才能在这里查到课程表</div>
+		<div class="lhs-menu-right lhs-ml"></div>
+	</li>
+</ul>
+
+<md-button class="md-raised md-primary" ng-click="getCur()" ng-show="IsLoged" style="width:200px !important;">查课程表</md-button>
+
+<div class="cur_list">
+
+</div>

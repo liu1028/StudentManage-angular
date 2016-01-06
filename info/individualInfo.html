@@ -1,0 +1,58 @@
+<md-dialog aria-label="selectRate"  ng-cloak>
+  <form name="indiviForm">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>修改个人信息</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel($event)">
+        <md-icon md-svg-src="front_frame/angular-material/img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px;min-width:400px; ">
+    <div class="md-dialog-content" style="font-weight:bold;">
+      <div style="margin-bottom:15px;">
+        <span>姓名：{{user.name}}</span>&nbsp;&nbsp;
+        <span>学号：{{user.number}}</span>
+      </div>
+
+      <md-input-container>
+        <label>政治面貌：</label>
+        <input ng-model="user.political" name="political"  required/>
+      </md-input-container> 
+	  
+      <md-input-container>
+        <label>籍贯：</label>
+        <input ng-model="user.birthplace" name="birthplace"  required/>
+      </md-input-container> 
+	  
+	  <md-input-container class="md-block">
+        <label>兴趣爱好：</label>
+        <input ng-model="user.hobby" name="hobby"  required/>
+      </md-input-container> 
+	  
+      <md-input-container class="md-block">
+        <label>手机号码：</label>
+        <input ng-model="user.phone" name="phone"  required ng-pattern="/^[0-9]{11,11}$/"/>
+        <div ng-messages="indiviForm.phone.$error" role="alert">
+          <div ng-message="pattern">
+            手机号应该为11个数字！
+          </div>
+        </div>
+      </md-input-container> 
+	  
+      <md-input-container class="md-block">
+        <label>邮箱：</label>
+        <input ng-model="user.email" name="clientEmail" type="email" required/>
+      </md-input-container> 
+
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <span flex></span>
+    <md-button ng-click="answer(indiviForm.$invalid)" type="submit" class="md-raised md-accent" style="margin-right:20px;" >
+      确定
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

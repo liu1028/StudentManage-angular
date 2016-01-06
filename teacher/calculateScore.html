@@ -1,0 +1,137 @@
+<style type="text/css">
+	ul.lhs-menu
+	{
+		overflow:auto;
+		list-style: none;
+	}
+	.lhs-ml
+	{
+		height:50px;
+		padding-top:22px;
+		display: inline-block;
+	}
+	.lhs-menu-left
+	{
+		background:url('image/menu-li-left.png') no-repeat;
+		width:20px;
+	}
+	.lhs-menu-middle
+	{
+		background:url('image/menu-li-center.png') repeat-x;	
+		padding-left:20px;
+		padding-right:20px;	
+		color:white;
+		font-weight: bold;
+	}
+	.lhs-menu-right
+	{
+		background:url('image/menu-li-right.png') no-repeat;
+		width:20px;
+	}
+	.lhs-menu li
+	{
+		overflow:auto;
+		float:left;
+		margin-left:20px;
+	}
+	.lhs-menu li > div
+	{
+		float:left;
+	}
+	
+	#s_table
+	{
+		border:1px solid rgb(79,79,217);
+		margin-left:80px;
+		margin-bottom:20px;
+	}
+	#s_table th
+	{
+		background:rgb(79,79,217);
+		color:white;
+		font-weight:bold;
+		font-size:16px;
+		height:50px;
+		line-height:50px;
+	}
+	#s_table td
+	{
+		height:35px;
+	}
+	#s_table td > input
+	{
+		width:140px !important;
+	}
+	#s_table tr:nth-child(2n)
+	{
+		background:rgb(206,179,219);
+	}
+	#s_table tr:nth-child(2n+1)
+	{
+		background:#ddd;
+	}
+	.score_in
+	{
+		border:2px solid rgb(79,79,217);
+		height:25px;
+		width:150px;
+		font-size:15px;
+		font-weight:bold;
+	}
+	.score_in:focus
+	{
+		box-shadow:0px 2px 2px gray; 
+	}
+</style>
+
+<div style="width:100%;min-height:100%;background:#efefef">
+	<ul class="lhs-menu">
+		<li>
+			<div class="lhs-menu-left lhs-ml"></div>
+			<div class="lhs-menu-middle lhs-ml">{{sub}}</div>
+			<div class="lhs-menu-right lhs-ml"></div>
+		</li>
+		<li>
+			<div class="lhs-menu-left lhs-ml"></div>
+			<div class="lhs-menu-middle lhs-ml">{{pro}}</div>
+			<div class="lhs-menu-right lhs-ml"></div>
+		</li>
+		<li>
+			<div class="lhs-menu-left lhs-ml"></div>
+			<div class="lhs-menu-middle lhs-ml">{{major}}</div>
+			<div class="lhs-menu-right lhs-ml"></div>
+		</li>
+	</ul>	
+	<div style="clear:both;height:30px;"></div>
+	
+	<div>
+		<table id="s_table" cellpadding="3">
+			<tr>
+				<th width="180" height="30">学号</th>
+				<th width="160">姓名</th>
+				<th width="165">平时成绩</th>
+				<th width="165">卷面成绩</th>
+				<th width="150">总成绩</th>
+				<th width="130">操作</th>
+			</tr>
+			<tr ng-repeat="stu in students" align="center">
+				<td>{{stu.id}}</td>
+				<td>{{stu.name}}</td>
+				<td><input class="score_in" ng-show="isVisible" ng-model="p[$index]" ng-keyup="calTotalScore($index)"><span ng-show="!isVisible">{{p[$index]}}</span></td>
+				<td><input class="score_in" ng-show="isVisible" ng-model="j[$index]" ng-keyup="calTotalScore($index)"><span ng-show="!isVisible">{{j[$index]}}</span></td>
+				<td>
+					<span>{{z[$index]}}</span>
+					<span ng-show="isNumError[$index]" style="color:red;font-weight:bold;">请输入数字!</span>
+					<span ng-show="isOverRange[$index]" style="color:red;font-weight:bold;">输入0-100间的数字!</span>
+				</td>
+				<td> 
+					<md-icon md-svg-icon="announcement" ng-click="canEdit($event)"></md-icon>
+				</td>
+			</tr>
+		</table>
+		<div layout="row" layout-align="center center" style="margin-bottom:50px;">
+			<md-button class="md-raised md-accent" ng-hide="isSubmitted" ng-click="submitData()">提交</md-button>
+			<md-button class="md-raised md-accent" ng-hide="isSubmitted" ng-click="storeData()">保存</md-button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<md-dialog aria-label="selectRate"  ng-cloak>
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>亮出我签名</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel($event)">
+        <md-icon md-svg-src="front_frame/angular-material/img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px;min-width:400px; ">
+    <div class="md-dialog-content" style="font-weight:bold;">
+        <md-input-container class="md-block">
+          <label>我的个性签名：</label>
+          <input ng-model="motto" required  type="textarea"/>
+        </md-input-container> 
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <span flex></span>
+    <md-button ng-click="answer($event)" type="submit" class="md-raised md-accent" style="margin-right:20px;" >
+      确定
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

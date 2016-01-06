@@ -1,0 +1,27 @@
+<style type="text/css">
+	.year_panel
+	{
+		margin:50px auto;
+		font-size:18px;
+		font-weight:bold;
+		border:1px solid #106CC8;
+		box-shadow: 0px 0px 20px #106CC8;
+		border-radius:8px;
+		padding:15px 50px 20px 50px;
+	}
+
+</style>
+
+<p class="year_panel">
+
+     <md-input-container>
+        <label>请选择年份</label>
+        <md-select ng-model="selectedYear">
+          <md-option ng-repeat="year in cur_year" value="{{year}}">
+            {{year}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+	  <br/>
+	<md-button class="md-raised md-primary" ng-click="selectYear($event)" style="width:180px !important;">确定</md-button>
+</p>

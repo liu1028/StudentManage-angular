@@ -1,0 +1,163 @@
+<style type="text/css">
+	ul.lhs-menu
+	{
+		overflow:auto;
+		list-style: none;
+	}
+	.lhs-ml
+	{
+		height:50px;
+		padding-top:22px;
+		display: inline-block;
+	}
+	.lhs-menu-left
+	{
+		background:url('image/menu-li-left.png') no-repeat;
+		width:20px;
+	}
+	.lhs-menu-middle
+	{
+		background:url('image/menu-li-center.png') repeat-x;	
+		padding-left:20px;
+		padding-right:20px;	
+		color:white;
+		font-weight: bold;
+	}
+	.lhs-menu-right
+	{
+		background:url('image/menu-li-right.png') no-repeat;
+		width:20px;
+	}
+	.lhs-menu li
+	{
+		overflow:auto;
+		float:left;
+		margin-left:20px;
+	}
+	.lhs-menu li > div
+	{
+		float:left;
+	}
+	
+	table.wanted_sub_table
+	{
+		margin-left:50px;
+		margin-top:15px;
+		margin-bottom: 40px;
+		float:left;
+	}
+	.wanted_sub_table th,table.selected_sub th
+	{
+		background:#107Cea;
+		height:45px;
+		font-size:18px;
+		font-weight:bold;
+		color:white;
+	}
+	table.selected_sub th
+	{
+		background:#31708f;
+	}
+	.wanted_sub_table td
+	{
+		text-align: center;
+		background:rgb(225,225,225);
+	}
+	
+	.alert_info
+	{
+		background-color: #d9edf7;
+		border-color: #bce8f1;
+		color: #31708f;
+		padding: 15px;
+		border-radius: 7px;
+		float:left;
+		margin-left:50px;
+		margin-top:15px;
+		width:30%; 
+	}
+	
+	table.selected_sub
+	{
+		position: fixed;
+		top:130px;
+		right:30px;
+	}
+	table.selected_sub td
+	{
+		background:	#d9edf7;
+		text-align: center;
+		height:35px;
+	}
+	.md-button.submit-lhs
+	{
+		width:200px !important;
+	}
+	.round
+	{
+		border-radius:12px;
+		out-line:none;
+	}
+	.alert
+	{
+		font:normal bold 30px/40px "微软雅黑";
+		padding-top:35px;
+		padding-bottom: 35px;
+		color:white;
+		background:#31708f;
+		text-align:center;
+	}
+</style>
+<div style="width:100%;min-height:100%;background:#efefef">
+	<ul class="lhs-menu">
+		<li>
+			<div class="lhs-menu-left lhs-ml"></div>
+			<div class="lhs-menu-middle lhs-ml">公选课选课模块</div>
+			<div class="lhs-menu-right lhs-ml"></div>
+		</li>
+	</ul>
+	<div class="alert" ng-hide="isModifiable">您已经提交了课程，不能再选了！</div>
+	<table class="wanted_sub_table" cellpadding="3" cellspacing="0" align="center" ng-show="isModifiable">
+		<tr>
+			<th width="60">编号</th>
+			<th width="160">课程名</th>
+			<th width="130">授课教师</th>
+			<th width="120">已选人数</th>
+			<th width="100">确认选择</th>
+		</tr>
+		<tr ng-repeat="sub in subs" ng-hide="isSelected[$index]">
+			<td>{{$index+1}}</td>
+			<td>{{sub.name}}</td>
+			<td>{{sub.teacher}}</td>
+			<td>{{sub.seletedNum}}</td>
+			<td><md-checkbox aria-label="sub_check" class="md-secondary"ng-click="addSubItem($index)"></md-checkbox></td>
+		</tr>
+	</table>
+	
+	<div class="alert_info" ng-if="selectedSub.length==0">
+		您现在还没有选择的课程!
+	</div>
+	<table class="selected_sub" cellpadding="3" align="center" ng-show="selectedSub.length>0 && isModifiable"">
+		<tr>
+			<th width="60">编号</th>
+			<th width="160">课程名</th>
+			<th width="130">授课教师</th>
+			<th width="100">操作</th>
+		</tr>
+		<tr ng-repeat="s in selectedSub">
+			<td>{{$index+1}}</td>
+			<td>{{s.name}}</td>
+			<td>{{s.teacher}}</td>
+			<td>
+				<button  class="md-warn round" ng-click="removeFromSelected($index)">
+					<md-icon md-svg-icon="md-close"></md-icon>
+				</button>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="padding-top:20px;background:none;">
+				<md-button class="md-primary md-raised submit-lhs" ng-click="submit($event)" ng-show="isModifiable">提交</md-button>
+			</td>
+		</tr>
+	</table>
+</div>

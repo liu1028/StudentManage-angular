@@ -1,0 +1,46 @@
+<md-dialog aria-label="selectRate"  ng-cloak>
+  <form name="rateForm">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>选择平时分和卷面分的比例</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon md-svg-src="front_frame/angular-material/img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px;min-width:400px; ">
+    <div class="md-dialog-content" style="font-weight:bold;">
+      <md-input-container class="md-block">
+        <label>请输入平时分比例：(单位：%)</label>
+          <input ng-model="averScore" name="rate" class="score_input" type="number" min="0" max="100" required/>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>卷面分比例：(单位：%)</label>
+        <input ng-model="examScore" name="rate" class="score_input" type="number" min="0" max="100" required/>
+      </md-input-container> 
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <span ng-messages="rateForm.rate.$error" multiple style="color:maroon;">
+              <div ng-message="required">
+                  平时、考试比例均不能为空！
+              </div>
+              <div ng-message="min">
+                  平时、考试比例均不能小于0！
+              </div>
+              <div ng-message="max">
+                  平时、考试比例均不能大于100！
+              </div>
+              <div ng-message="number">
+                  平时、考试比例必须是数字！
+              </div>
+    </span>
+    <span flex></span>
+    <md-button ng-click="answer(rateForm.$invalid,averScore,examScore)" type="submit" class="md-raised md-accent" style="margin-right:20px;" >
+      确定
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

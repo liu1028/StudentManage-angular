@@ -1,0 +1,133 @@
+<!doctype html>
+<html ng-app="myIndexPage" ng-cloak>
+	<head>
+		<title>LayOut</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<link rel="stylesheet" href="front_frame/angular-material/angular-material.css" />
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<div layout="row" layout-sm="column"  layout-fill ng-cloak ng-controller="pageCtrl">
+			<md-sidenav  md-component-id="left" class="md-sidenav-left md-whiteframe-z2 lhs_stu_navbar"  
+					md-is-locked-open="$mdMedia('gt-sm')" layout-fill>
+				<header layout-align="center center" layout="column">
+					<a ng-href="/" class="lhs_logo">
+						<img src="front_frame/angular-material/img/icons/angular-logo.svg" alt="" width="120" height="120"/>
+						<div>学生管理平台</div>
+					</a>
+				</header>
+				<div>
+					<!-- 菜单部分 -->
+					<div layout="column">
+						<ul class="lhs_menu">
+							<li ng-repeat="item in menu"><a ng-href="{{item.href}}">{{item.text}}</a></li>
+						</ul>
+					</div>
+					
+					<!--关闭按钮，当屏幕为手机大小-->
+					<div flex="grow" layout-align="end end" layout="row">
+						<md-button  class="md-primary"  hide-gt-sm ng-click="close()">
+							<span style="color:white">关闭菜单</span>
+						</md-button>
+					</div>
+				</div>
+			</md-sidenav>
+			
+			<md-content flex class="lhs_stu_content contentL" layout-fill ng-cloak>
+				<!-- 页头部分 -->
+				<md-toolbar class="md-toolbar-tools toolhead" style="box-shadow:2px 3px 3px gray">
+					<md-button class="md-icon-button" aria-label="Settings" show-sm hide-gt-sm ng-click="openLeftMenu()">
+						&gt;&gt;
+					</md-button>
+					<md-fab-speed-dial md-open="false" md-direction="right" ng-class="'md-scale'" class="fab_dial">
+						<md-fab-trigger>
+							<md-button aria-label="menu" class="md-fab fab_main" style="background:rgb(63,100,210);">
+								<md-icon md-svg-src="front_frame/angular-material/img/icons/menu.svg"></md-icon>
+							</md-button>
+						</md-fab-trigger>
+						<md-fab-actions>
+							<md-button aria-label="info" class="md-fab md-raised md-mini" ng-click="modifyInfo($event)">
+								<md-tooltip md-direction="bottom" md-autohide="false">
+											修改个人信息
+								</md-tooltip>
+								<md-icon md-svg-src="social:people-outline" style="color:blue" aria-label="info"></md-icon>
+							</md-button>
+							<md-button aria-label="pwd" class="md-fab md-raised md-mini" ng-click="modifyPwd($event)">
+								<md-tooltip md-direction="bottom" md-autohide="false">
+											修改密码
+								</md-tooltip>
+								<md-icon md-svg-src="social:notifications-on"style="color:blue" aria-label="pwd"></md-icon>
+							</md-button>
+							<md-button aria-label="motto" class="md-fab md-raised md-mini" ng-click="modifyMotto($event)">
+								<md-tooltip md-direction="bottom" md-autohide="false">
+											添加个性签名
+								</md-tooltip>
+								<md-icon md-svg-src="social:share" aria-label="motto" style="color:blue"></md-icon>
+							</md-button>
+						</md-fab-actions>
+					</md-fab-speed-dial>
+					
+					<span flex="15"></span>
+					<h2 hide-sm show-gt-sm flex="20">
+						<span>欢迎您，{{username}}！</span>
+					</h2>
+					<div flex layout="row" layout-align="end center">
+						<md-button ng-click="logout()">
+							[退出]
+						</md-button>
+					</div>
+				</md-toolbar>
+				
+				<!--悬浮菜单-->
+				 <md-fab-toolbar md-open="false" count="0" md-direction="left" style="display:none;position:fixed;right:20px;top:10px;z-index:9999;" id="fab_toolb">
+					<md-fab-trigger class="align-with-text">
+ 						<md-button aria-label="menu" class="md-fab md-primary">
+							<md-icon md-svg-src="front_frame/angular-material/img/icons/menu.svg"></md-icon>
+						</md-button>
+					</md-fab-trigger>
+					<md-toolbar>
+						<md-fab-actions class="md-toolbar-tools">
+							<md-button ng-click="logout()">
+								[退出]
+							</md-button>
+							<md-button aria-label="motto" class="md-fab md-raised md-mini" ng-click="modifyMotto($event)">
+								<md-icon md-svg-src="social:share" aria-label="motto" style="color:blue"></md-icon>
+							</md-button>
+							<md-button aria-label="pwd" class="md-fab md-raised md-mini"  ng-click="modifyPwd($event)">
+								<md-icon md-svg-src="social:notifications-on"style="color:blue" aria-label="pwd"></md-icon>
+							</md-button>
+							<md-button aria-label="info" class="md-fab md-raised md-mini" ng-click="modifyInfo($event)">
+								<md-icon md-svg-src="social:people-outline" style="color:blue" aria-label="info"></md-icon>
+							</md-button>
+						</md-fab-actions>
+					</md-toolbar>
+				</md-fab-toolbar>
+				
+				<!-- 主体部分 -->
+				<md-content layout="column" ng-view flex="grow" style="background:#efefef;">
+
+				</md-content>
+			</md-content>
+
+		</div>
+		
+		
+		<script src="front_frame/jquery2.js"></script>
+		
+		<script src="front_frame/angular/angular.js"></script>	
+		<script src="front_frame/angular/angular-messages.min.js"></script>
+		<script src="front_frame/angular/angular-aria.js"></script>
+		<script src="front_frame/angular/angular-animate.min.js"></script>
+		<script src="front_frame/angular/angular-route.min.js"></script>
+		<script src="front_frame/angular-material/angular-material.js"></script>
+		
+		<script src="js/index.js"></script>
+		
+		<script src="js/AppModule.js"></script>
+		<script src="js/App.js"></script>
+		<script src="js/teacherControllers.js"></script>
+		<script src="js/studentControllers.js"></script>
+	</body>
+</html>

@@ -1,0 +1,126 @@
+			body,*
+			{
+				margin:0px;
+				padding:0px;
+				position:relative;
+			}
+			body
+			{
+				width:100%;
+				height:100%;
+				background:url('../image/login2.jpg');
+			}
+			.lhs_head
+			{
+				position:absolute;
+				color:rgb(248,254,118);
+				font:normal bolder 48px/50px arial,sans-serif;
+				left:100px;
+				top:80px;
+			}
+			.lhs_title
+			{
+				position:absolute;
+				color:#106CC8;
+				font:normal bold 48px/50px "微软雅黑";
+				left:220px;
+				top:530px;
+			}
+			.login_panel
+			{
+				position:absolute;
+				width:360px;
+				height:380px;
+				background:rgba(240,240,240,0.4);
+				right:210px;
+				top:180px;
+				box-shadow:0px 0px 40px #eee;
+				border-radius:10px;
+			}
+			
+			.login_h
+			{
+				height:80px;
+				text-align:center;
+				font:normal bold 25px/80px arial,sans-serif;
+				color:white;
+			}
+			.login_c
+			{
+				margin-top:40px;
+			}
+			ul.login
+			{
+				list-style: none;
+			}
+			ul.login li
+			{
+				height:40px;
+				margin:0px auto;
+				width:85%;
+				line-height:40px;
+			}
+			ul.login li.input_li
+			{
+				background:white;
+				padding-left:8px;
+				border:2px solid #bbb;
+				margin-top:25px;
+			}
+			.login input
+			{
+				height:30px;
+				margin-left:5px;
+				outline: none;
+				border:none;
+				font-size:15px;
+			}
+			img
+			{
+				vertical-align: middle;
+			}
+			
+			.div_btn
+			{
+				margin-top:35px;
+				height:30px;	
+				padding-left:28px;
+				color:white;
+				font-weight:bold;
+				font-size:17px;
+			}
+			
+			.div_btn > div
+			{
+				height:30px;
+				line-height: 30px;
+				float:left;
+				margin-right:5px;
+				
+			}
+			.div_btn .btn 
+			{
+				float:right;
+				margin-right:25px;
+			}
+			input[type="checkbox"]
+			{
+				width:20px;
+				height:20px;
+				vertical-align: middle;
+				background:white;
+			}
+			#login_btn
+			{
+				width:140px;
+				height:35px;
+				font:normal bold 18px/25px arial,sans-serif;
+				border-radius: 7px;
+				border:none;
+				background:#106CC8;
+				color:white;
+			}
+			#login_btn:hover
+			{
+				background:rgb(63,81,181);
+			}
