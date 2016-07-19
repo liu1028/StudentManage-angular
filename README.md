@@ -17,7 +17,7 @@ this is a test project for angular
 
 ***
 
-####介绍的比较简略，提供的浏览网址为：[http://zhonghuiblog.com/StudentManage/layout.html#/ext/queryHubuScore](http://zhonghuiblog.com/StudentManage/layout.html#/ext/queryHubuScore)
+####介绍的比较简略，提供的浏览网址为：[http://121.42.153.166/StudentManage/layout.html#/ext/queryHubuScore](http://121.42.153.166/StudentManage/layout.html#/ext/queryHubuScore)
 
-####WebService的XML文档网址为：[http://zhonghuiblog.com:8001/?wsdl](http://zhonghuiblog.com:8001/?wsdl)
+####WebService的XML文档网址为：[http://121.42.153.166:8001/?wsdl](http://121.42.153.166:8001/?wsdl)
     
